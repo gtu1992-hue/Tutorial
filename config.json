@@ -1,82 +1,29 @@
- {
-    "inbounds": [
-        {
-            "listen": "127.0.0.1",
-            "port": 8080,
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true,
-                "userLevel": 8
-            }
-        },
-        {
-            "listen": "127.0.0.1",
-            "port": 8880,
-            "protocol": "http",
-            "settings": {
-                "userLevel": 8
-            }
-        }
-    ],
-    "log": {
-        "loglevel": "none"
-    },
-    "outbounds": [
-        {
-            "mux": {
-                "concurrency": 8,
-                "enabled": false
-            },
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "google.com",
-                        "port": 443,
-                        "users": [
-                            {
-                                "encryption": "none",
-                                "id": "aaaa1122-bbbb-4ccc-8ddd-eeeeffff0000",
-                                "flow": "",
-                                "level": 8,
-                                "security": "chacha20-poly1305"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "tls",
-                "tlsSettings": {
-                    "allowInsecure": true,
-                    "serverName": "youtube.com"
-                },
-                "wsSettings": {
-                    "headers": {
-                        "Host": "ahmed-vip1-792186265538.europe-west1.run.app"
-                    },
-                    "path": "/khaledvpn"
-                }
-            }
-        }
-    ],
-    "policy": {
-        "levels": {
-            "8": {
-                "connIdle": 300,
-                "downlinkOnly": 1,
-                "handshake": 4,
-                "uplinkOnly": 1
-            }
-        },
-        "system": {
-            "statsOutboundUplink": false,
-            "statsOutboundDownlink": false
-        }
-    },
-    "stats": {
-        
-    }
+{
+"inbounds": [
+{
+"port": 8080,
+"protocol": "vless",
+"settings": {
+"clients": [
+{
+"id": "d2cb8181-233c-4d18-9972-8a1b04db0044",
+"level": 0
+}
+],
+"decryption": "none"
+},
+"streamSettings": {
+"network": "ws",
+"wsSettings": {
+"path": "/personalizado"
+}
+}
+}
+],
+"outbounds": [
+{
+"protocol": "freedom",
+"settings": {}
+}
+]
 }
